@@ -1,8 +1,3 @@
-example_setting:
-  default: true
-  description:
-    en: A description of a setting.
-
 svg_icons:
   default: "circle-check"
   type: "list"
