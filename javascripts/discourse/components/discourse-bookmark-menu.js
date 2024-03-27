@@ -1,14 +1,7 @@
-import { ajax } from "discourse/lib/ajax";
-
+/* eslint-disable no-console */
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { createPopper } from "@popperjs/core";
-import { tracked } from "@glimmer/tracking";
-import { schedule } from "@ember/runloop";
-import tippy from "tippy.js";
-import { hideOnEscapePlugin } from "discourse/lib/d-popover";
-import Bookmark from "discourse/models/bookmark";
-import { inject as service } from "@ember/service";
+import discourseLater from "discourse-common/lib/later";
 
 export default class DiscourseBookmarkMenu extends Component {
   reminderAtOptions = [
@@ -21,7 +14,7 @@ export default class DiscourseBookmarkMenu extends Component {
 
   @action
   autoFocusButton(option, target) {
-    Ember.run.later(() => {
+    discourseLater(() => {
       console.log(option, target);
       if (option.autofocus) {
         target.focus();

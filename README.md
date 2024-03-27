@@ -1,4 +1,4 @@
-# **Theme Name**
+# **discourse-bookmark-menu**
 
 **Theme Summary**
 

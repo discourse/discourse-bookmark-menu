@@ -26,7 +26,7 @@
           @icon="pencil-alt"
           @translatedLabel="Edit"
           @action={{this.onEditReminder}}
-          @class="discourse-bookmark-menu__row-btn btn-flat"
+          class="discourse-bookmark-menu__row-btn btn-flat"
         />
       </li>
       <li
@@ -39,7 +39,7 @@
           @icon="trash-alt"
           @translatedLabel="Delete"
           @action={{this.onRemoveBookmark}}
-          @class="discourse-bookmark-menu__row-btn btn-flat"
+          class="discourse-bookmark-menu__row-btn btn-flat"
         />
       </li>
     {{else}}
@@ -49,10 +49,10 @@
       {{#each this.reminderAtOptions as |option|}}
         <li class={{concat-class "discourse-bookmark-menu__row" option.class}}>
           <DButton
+            {{did-insert (fn this.autoFocusButton option)}}
             @translatedLabel={{option.name}}
             @action={{fn this.onChooseOption option}}
-            @class="discourse-bookmark-menu__row-btn btn-flat"
-            {{did-insert (fn this.autoFocusButton option)}}
+            class="discourse-bookmark-menu__row-btn btn-flat"
           />
         </li>
       {{/each}}
